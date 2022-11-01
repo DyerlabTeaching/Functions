@@ -1,5 +1,5 @@
 project:
-  title: "Dyerlab-Template"
+  title: "Functions"
   output-dir: docs
 
 format:
@@ -9,9 +9,6 @@ format:
     toc-location: right
     html-math-method: katex
     self-contained: true
-    code-fold: true
-    code-overflow: wrap
-    code-summary: Show the code
     code-block-border-left: "#31BAE9"
     citations-hover: true
     footnotes-hover: true
@@ -21,6 +18,11 @@ format:
     code-fold: false
     code-overflow: wrap
     footer: "[Dyerlab](https://dyerlab.org)"
-  
-
-
+    background-transition: fade
+    theme: default
+    logo: "media/ces_logo.png"
+    editor: source
+    title-slide-attributes: 
+      data-background-image: "media/contour.png"
+      data-background-position: "right"
+      data-background-size: initial

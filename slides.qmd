@@ -1,84 +1,376 @@
 ---
-title: "Topic Title"
-subtitle: "Witty Commentary"
+title: "Functions"
 author: Rodney J. Dyer
 format: revealjs
-editor: visual
+editor: source
+execute: 
+  echo: true
 ---
 
-## Quarto
+# Topics
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+This topic will cover the following items
+1. Scope of Visibility  
+2. Creating the Function `foo()`  
+3. Logical Flow Control
 
-## Bullets
 
-When you click the **Render** button a document will be generated that includes:
 
--   Content authored with markdown
--   Output from executable code
+# Scope {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
 
-## Some Title
 
-::: {layout-ncol="2"}
-### List One
+# ⚙️ Making Functions
 
--   Item A
--   Item B
--   Item C
+A function is just a *chunk* of code, wrapped within curly brakets, and given a name.
 
-### List Two
-
--   Item X
--   Item Y
--   Item Z
-:::
-
-## Another Slide
-
-::: {layout-ncol="2"}
-### The code
-
-```{r eval=FALSE, echo=TRUE}
-hist( rnorm(1200) )
-```
-
-### The Plot
-
-```{r echo=FALSE}
-hist( rnorm( 1200 ) )
-```
-:::
-
-## And another slide
-
-::: {layout-ncol="2"}
--   Item X
--   Item Y
--   Item Z
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida eu erat et fring. Morbi congue augue vel eros ullamcorper, eget convallis tortor sagittis. Fusce sodales viverra mauris a fringilla. Donec feugiat, justo eu blandit placerat, enim dui volutpat turpis, eu dictum lectus urna eu urna. Mauris sed massa ornare, interdum ipsum a, semper massa.
-:::
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r echo=TRUE}
-px <- 0.75
-py <- 0.25
-m <- 0.1
-ret <- rep(NA,100)
-ret[1] <- py
-for( i in 2:100) {
-  ret[i] <- (1-m)*ret[(i-1)] + px * m   
+```{r eval=FALSE}
+foo <- function() {
+  # R CODE GOES HERE
 }
 ```
 
-## Results
+:::{.fragment}
+The contents of a function may be:   
+- A few lines of code or hundreds,   
+- Calls to other functions,   
+- Accepting variables as argument *input* (or not), and  
+- Returning some object (or not).
+:::
+
+# Variable Scope
+
+Variables within a function are 'localized' to within that variable *alone*.  This allows us to:
+
+1. Not run out of variable names (`df` and `x` are common ones we've used thus far).   
+2. Not have the variables we are working with being clobbered every time we call another function.
+
+# &nbsp;
+
+Define a function with a variable `x` inside the function.
 
 ```{r}
-plot( ret, type="l")
+foo <- function() {
+  x <- 42
+  cat("x = ", x, "within function.\n")
+}
 ```
+
+
+# Prior to the Function
+
+Then examine a similarly named variable with a different assigned value before and after calling that function.
+
+```{r}
+x <- 23
+cat("x = ", x, "before function call.")
+```
+
+
+# Within The Function
+
+Within the function, the variable represents the value inside the function.
+
+```{r}
+foo()
+```
+
+# After the Function Call
+
+And after the function is called, examine the value of the variable.
+
+```{r}
+cat("x = ", x, "after function call")
+```
+
+
+:::{.fragment}
+<font color="red">NOTICE: before and after function are in "global variable scope, whereas inside the function, the variable is localized within the boundaries of the function itself."</font>
+:::
+
+
+# Variable Scope
+
+The global scope is shown in RStudio on the *Environment* tab.
+
+.center[![](https://live.staticflickr.com/65535/50398760012_a53e2ea83d_c_d.jpg)]
+
+
+# Scope for Variables & Functions
+
+You can also see what is in the environment by asking to list all variables and functions using the `ls()` function.
+
+```{r}
+ls()
+```
+
+
+# Crafting A Function {background-color="white" background-image="media/conjunction_junction.png" background-size="initial" background-position="right"}
+
+
+# Function == Variable
+
+When we make functions, we do so by assigning it the result of the call to the `function()` function.
+
+
+
+# Passing Varibles 
+
+While some functions do not take input variables, many require it.  To pass variables into the function scope, we identify them in the 
+
+
+```{r}
+foo <- function( x ) {
+  cat("x =", x, "in the function.")
+}
+foo( 23 )
+```
+
+# Error Catching
+
+If you do not give the function arguments it asks for, it complains loudly.
+
+```{r}
+#| error: true
+foo()
+```
+
+# Default Values
+
+We can put in *default* values for arguments by assigning values in the function parentheses.
+
+```{r}
+favorite <- function( professor = "Dyer" ) {
+  cat("My favorite professor is:", professor, "\n")
+}
+
+favorite()
+```
+
+# Overriding Default Values
+
+The reason to put in a default value is to make sure that you can easily accomodate everyone while minimizing the potential for errors.
+
+:::{.fragment}
+```{r}
+favorite( professor = "Bulluck" )
+```
+:::
+
+
+# Getting Results {.smaller}
+
+We **must** be explicit about wanting to send something back to the caller using the `return()` function.
+
+```{r}
+foo <- function( name = "Alice") {
+  response <- paste( name, "is in the house.")
+  return( response )
+}
+```
+
+
+:::{.fragment}
+Then we can assign the results of that function to a variable.
+
+```{r}
+who_is_in_the_house <- foo()
+who_is_in_the_house
+```
+:::
+
+
+# Logical Flow {background-color="black" background-image="media/contour.png" background-size="initial" background-position="right"}
+
+
+# Is it Cold Outside 🌡
+
+It is very convenient to be able to execute come code under certain conditions and another set of code under other conditions.  
+
+```{r}
+freezing <- function( temperature ) {
+  if( temperature <= 0 ) {
+    print("Brrr")
+  } 
+  else {
+    print("Warm!")
+  }
+}
+```
+
+
+# Testing It Out
+
+<font color="red">Always</font> verify that your code produces the correct answer, *especially* for boundary values.
+
+```{r}
+freezing( -1 )
+freezing( 0 )
+freezing( 1 )
+```
+
+
+
+# Multiple Conditions {.smaller .scrollable}
+
+Sometimes we have several different conditions that we wish to evaluate.
+
+```{r}
+grade <- function( percentage ) {
+  if( percentage >= 90 ) {
+    return( "A" )
+  } 
+  else if( percentage >= 80 ) {
+    return( "B" )
+  }
+  else if( percentage >= 70 ) {
+    return( "C" )
+  }
+  else if( percentage >= 60 ) {
+    return( "D" )
+  }
+  else {
+    return( "F" )
+  }
+}
+```
+
+
+# Mutipart Testing
+
+```{r}
+grade( 10000000 )
+grade( 98 )
+grade( 80 )
+grade( 72 )
+grade( 54 )
+```
+
+
+# A Shortcut
+
+There are so many cases where we use the dichotomous `if/else` workflow, that we can simplify this code
+
+```{r}
+#| eval: false
+if( CONDITION ) {
+  TRUE_RESPONSE
+} 
+else {
+  FALSE_RESPONSE
+}
+```
+
+&nbsp;
+
+:::{.fragment}
+```{r}
+#| eval: false
+ifelse( CONDITION, TRUE_RESPONSE, FALSE_RESPONSE)
+```
+:::
+
+
+# Example
+
+```{r}
+hour <- sample( 0:23, size = 18, replace=TRUE)
+hour
+```
+
+&nbsp;
+
+:::{.fragment}
+```{r}
+DayOrNight <- ifelse( hour >= 7 & hour <= 19, "Day", "Night")
+DayOrNight
+```
+:::
+
+
+# Looping 
+
+There are times when it is very helpful if we can loop over a collection of things.  These may be elements in a `vector`, rows in a `data.frame`, cycling through files on your computer to load in different data components, or to manipulate and analyze tweets harvested from the internet.
+
+
+
+
+# Use Case
+
+Determine which values are odd and which are even.
+
+```{r}
+x <- c(2,3,4,5)
+x[1] %% 2 == 0 
+x[2] %% 2 == 0 
+x[3] %% 2 == 0 
+x[4] %% 2 == 0 
+```
+
+:::{.fragment}
+<font color="red">Notice:</font> how the index number in the code is incremented by `1` for each value.
+:::
+
+# `for()` loop
+
+The `for()` loop does this.
+
+```{r}
+for( i in 1:4) { 
+  cat( i, x[i] %% 2 == 0, "\n")
+}
+```
+
+# Iterating Items
+
+Instead of using the index number to reference a value in a vector, we can refernce the set of items within the vector directly.
+
+```{r}
+for( value in x ) { 
+  cat( value, value %% 2 == 0, "\n")
+}
+```
+
+
+# `Apply`ing Functions
+
+Once we have a function, we can then iterate over values using `apply()`.
+
+```{r}
+is_even <- function( x ) { 
+  return( x %% 2 == 0)
+}
+```
+
+# Application
+
+
+```{r}
+lapply( x, is_even )
+```
+
+Notice that the return is a list...
+
+
+# Simplifying Output
+
+The output from `lapply()` is a list, whose length is the same as that of the original data.  However, it is sometimes necessary to just get back a vector of values for the results instead of futzing around with a list.
+
+# Simplifying Output
+
+Lazy programmers make small code.
+
+```{r}
+sapply( x, is_even)
+```
+
+
+
+
+
+
+
+
+
 
 ## Questions
 
