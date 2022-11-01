@@ -7,7 +7,7 @@
 
 ## Impetus
 
-This topic focuses on how you can create reusable code components to make your life easier.  This is done by bundling chunks of code under an *alias* of a function name.  After that, you can all your own function as if you were executing all that underlying code.  This helps tremendously 
+This topic focuses on how you can create reusable code components to make your life easier.  This is done by bundling chunks of code under an *alias* of a function name.  After that, you can all your own function as if you were executing all that underlying code.  This helps tremendously in creating reusable code that has easier maintainability and hence fewer errors. 
 
 ## Student Learning Objectives
 
