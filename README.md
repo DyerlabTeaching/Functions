@@ -1,8 +1,8 @@
 # Functions
 
-<center>
+
 ![](https://github.com/DyerlabTeaching/Functions/raw/main/media/conjunction_junction.png)
-</center>
+
 
 
 ## Impetus
