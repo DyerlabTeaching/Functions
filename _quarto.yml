@@ -13,6 +13,7 @@ format:
     citations-hover: true
     footnotes-hover: true
     link-external-icon: true
+    editor: source
   revealjs:
     self-contained: true
     code-fold: false
@@ -20,7 +21,6 @@ format:
     footer: "[Dyerlab](https://dyerlab.org)"
     background-transition: fade
     theme: default
-    logo: "media/ces_logo.png"
     editor: source
     title-slide-attributes: 
       data-background-image: "media/contour.png"
