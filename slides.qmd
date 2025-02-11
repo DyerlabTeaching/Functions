@@ -92,7 +92,7 @@ cat("x = ", x, "after function call")
 
 The global scope is shown in RStudio on the *Environment* tab.
 
-.center[![](https://live.staticflickr.com/65535/50398760012_a53e2ea83d_c_d.jpg)]
+![](https://live.staticflickr.com/65535/50398760012_a53e2ea83d_c_d.jpg)
 
 
 # Scope for Variables & Functions
