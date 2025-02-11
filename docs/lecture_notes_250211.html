@@ -3082,9 +3082,9 @@ vertical-align: -.125em;
 <body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
   
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lecture_notes_250211.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></div>
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -3138,6 +3138,111 @@ vertical-align: -.125em;
               07:09  : 22   07:09  : 14   05:06  : 22  
               (Other):142   08:08  :  9   (Other):119  
               NA&#39;s   : 23   (Other): 20   NA&#39;s   :  5  </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>loc <span class="ot">&lt;-</span> arapat<span class="sc">$</span>LTRS </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>loc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot;
+ [10] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot;
+ [19] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot;
+ [28] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot;
+ [37] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot;
+ [46] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot;
+ [55] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot;
+ [64] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot;
+ [73] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot;
+ [82] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;02:02&quot;
+ [91] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot;
+[100] &quot;01:01&quot; &quot;02:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot;
+[109] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot;
+[118] &quot;01:02&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot;
+[127] &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot;
+[136] &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;01:01&quot;
+[145] &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot;
+[154] &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot;
+[163] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot;
+[172] &quot;02:02&quot; &quot;02:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:02&quot;
+[181] &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;02:02&quot; &quot;01:01&quot; &quot;01:01&quot;
+[190] &quot;01:02&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;02:02&quot;
+[199] &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot;
+[208] &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:02&quot;
+[217] &quot;01:01&quot; &quot;01:01&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:01&quot; &quot;01:01&quot; &quot;01:02&quot;
+[226] &quot;01:01&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:01&quot;
+[235] &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot;
+[244] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot;
+[253] &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot;
+[262] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot;
+[271] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot;
+[280] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot;
+[289] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot;
+[298] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot;
+[307] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot;
+[316] &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot;
+[325] &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:02&quot;
+[334] &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot;
+[343] &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:01&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;01:02&quot;
+[352] &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;02:02&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;01:02&quot; &quot;01:02&quot;
+[361] &quot;02:02&quot; &quot;01:02&quot; &quot;02:02&quot;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the is this a het function definition</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>isThisAHet <span class="ot">&lt;-</span> <span class="cf">function</span>( theLoc ) { </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Barf on not loci</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>( <span class="fu">is.na</span>( theLoc) ) { </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;You must not pass missing data to this function</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>( <span class="fu">class</span>( theLoc ) <span class="sc">!=</span> <span class="st">&quot;locus&quot;</span> ) { </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;Hey DUmmy, pass me a locus... duh.&quot;</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>( <span class="cn">NULL</span> )</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>( <span class="fu">ploidy</span>(theLoc) <span class="sc">!=</span> <span class="dv">2</span>) { </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;This function only works on diploids</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  theAlleles <span class="ot">&lt;-</span> <span class="fu">alleles</span>( theLoc ) </span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  ret <span class="ot">&lt;-</span> <span class="cn">TRUE</span> </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>( theAlleles[<span class="dv">1</span>] <span class="sc">==</span> theAlleles[<span class="dv">2</span>] ) { </span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    ret <span class="ot">&lt;-</span> <span class="cn">FALSE</span> </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>( ret ) </span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>theLoc <span class="ot">&lt;-</span> loc[<span class="dv">1</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">isThisAHet</span>( theLoc )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>arapat<span class="sc">$</span>MP20Het <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( row <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span> ) { </span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    theLoc <span class="ot">&lt;-</span> arapat<span class="sc">$</span>MP20[ row ] </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    het <span class="ot">&lt;-</span> <span class="fu">isThisAHet</span>( theLoc )</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    arapat<span class="sc">$</span>MP20Het[ row ] <span class="ot">&lt;-</span> het </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>( arapat<span class="sc">$</span>MP20Het)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Mode   FALSE    TRUE    NA&#39;s 
+logical      49      51     263 </code></pre>
 </div>
 </div>
 

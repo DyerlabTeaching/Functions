@@ -1,7 +1,9 @@
 ---
 title: "Function Lecture Notes"
 subtitle: "2025-02-11 - SNOW DAY ❄️"
-editor: visual
+format:
+  html:
+    echo: true 
 ---
 
 
@@ -68,9 +70,6 @@ isThisAHet <- function( theLoc ) {
 theLoc <- loc[1]
 
 isThisAHet( theLoc )
-
-arapat |>
-  mutate( isLTRSHet = isThisAHet( LTRS ) ) 
 
 ```
 
