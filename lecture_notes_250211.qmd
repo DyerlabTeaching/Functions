@@ -1,0 +1,113 @@
+---
+title: "Function Lecture Notes"
+subtitle: "2025-02-11 - SNOW DAY ❄️"
+editor: visual
+---
+
+
+This is an example.
+
+
+
+```{r}
+library( gstudio )
+library( tidyverse )
+data( arapat )
+summary( arapat )
+```
+
+
+
+```{r}
+loc <- arapat$LTRS 
+loc
+```
+
+
+
+
+```{r}
+# the is this a het function definition
+
+isThisAHet <- function( theLoc ) { 
+  
+  # Barf on not loci
+  if( is.na( theLoc) ) { 
+    cat("You must not pass missing data to this function\n")
+    return()
+  }
+  
+  if( class( theLoc ) != "locus" ) { 
+    cat("Hey DUmmy, pass me a locus... duh.")
+    return( NULL )
+  } 
+  
+  if( ploidy(theLoc) != 2) { 
+    cat("This function only works on diploids\n")
+    return()
+  }
+  
+  
+  theAlleles <- alleles( theLoc ) 
+  ret <- TRUE 
+  if( theAlleles[1] == theAlleles[2] ) { 
+    ret <- FALSE 
+  } 
+  return( ret ) 
+}
+
+
+
+```
+
+
+
+
+
+```{r}
+theLoc <- loc[1]
+
+isThisAHet( theLoc )
+
+arapat |>
+  mutate( isLTRSHet = isThisAHet( LTRS ) ) 
+
+```
+
+
+
+
+
+```{r}
+
+
+arapat$MP20Het <- NA
+
+
+for( row in 1:100 ) { 
+
+    theLoc <- arapat$MP20[ row ] 
+    
+    het <- isThisAHet( theLoc )
+    
+    arapat$MP20Het[ row ] <- het 
+  
+}
+
+summary( arapat$MP20Het)
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
