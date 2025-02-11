@@ -1,0 +1,46 @@
+---
+title: "In Class Activity"
+format: 
+  html:
+    code-tools: true
+    toc: false
+---
+
+<center>
+![](media/conjunction_junction.png)
+</center>
+
+Let's walk through setting up the first persistent function you have for this class.
+
+Make a `get_rice_data()` function.  It should have:
+
+1. Common units.  
+2. DateTime object with columns for Month, Day, Weekday
+3. No extraneous columns of data.
+
+
+Here is the URL.
+
+```{r}
+url <- "https://docs.google.com/spreadsheets/d/1Mk1YGH9LqjF7drJE-td1G_JkdADOU0eMlrP01WFBT8s/pub?gid=0&single=true&output=csv"
+```
+
+In the section below craft the code that will load in the data and do all the manipulations first.
+
+```{r}
+
+```
+
+
+Then *wrap* it into a function call **only after the code is finished**.
+
+```{r}
+get_rice_data <- function() { 
+
+  # your code from above goes here.  
+  
+}
+```
+
+
+Test it in this document and then make a copy of it in its own file so you can source it from anywhere.
