@@ -1,46 +1,38 @@
 ---
 title: "In Class Activity"
+subtitle: "Simulating Genetic Drift"
+author: "YOUR NAME HERE"
 format: 
   html:
     code-tools: true
     toc: false
 ---
 
-<center>
-![](media/conjunction_junction.png)
-</center>
-
-Let's walk through setting up the first persistent function you have for this class.
-
-Make a `get_rice_data()` function.  It should have:
-
-1. Common units.  
-2. DateTime object with columns for Month, Day, Weekday
-3. No extraneous columns of data.
+We are going to work on developing a function to estimate the distribution of alleles after a single generation of random mating, as was shown in the lecture slide on Genetic Drift ([here](https://dyerlabteaching.github.io/Drift-and-Mutation/slides.html#/1/10) and [here](https://dyerlabteaching.github.io/Drift-and-Mutation/slides.html#/1/12)).  To do this, we will use both looping *and* developing it as a function.
 
 
-Here is the URL.
+## Instructions
 
+For this exercise, you will:
+
+1. Create a Quarto document entitled `Functions` with your name on it.
+2. Create a 'narrative' describing that you'll be creating a function to estimate the binomial function to estimate the probabiltiiy of $N_A$ alleles from a diploid population with $N$ individuals and allele frequencies at a 2-allele locus with the frequency of the `A` allele denoted as $p$ and the frequency of the `B` allele is $q = 1-p$.
+3. Define a function in a chunck that has the code to estimate the binomial function as defined below.  
+$$
+P(N_A | N, p ) = \frac{2N!}{N_A!(N-N_A)!}p^N_A(1-p)^{N-N_A}
+$$
 ```{r}
-url <- "https://docs.google.com/spreadsheets/d/1Mk1YGH9LqjF7drJE-td1G_JkdADOU0eMlrP01WFBT8s/pub?gid=0&single=true&output=csv"
-```
-
-In the section below craft the code that will load in the data and do all the manipulations first.
-
-```{r}
-
-```
-
-
-Then *wrap* it into a function call **only after the code is finished**.
-
-```{r}
-get_rice_data <- function() { 
-
-  # your code from above goes here.  
-  
+# Here is a stub of the function
+binomial_prob <- function( N, Na, p ) { 
+  # Your code here
 }
 ```
 
+4. Use this function to create two sets of inferences.  The first inference is to compare the breadth of the potential allele distribution for a population with $N = 20$ vs a population with $N=50$, both of which start off with equal allele frequencies (e.g., $p = q = 0.5$).
 
-Test it in this document and then make a copy of it in its own file so you can source it from anywhere.
+5. Do the same and compare two populations with equal sizes, $N=20$, but with alternative allele frequencies.  Have one population with $p=0.5$ and the other with $p=0.1$.  Compare these and discuss the relative likelihood of the populations going to fixation.
+
+
+
+
+

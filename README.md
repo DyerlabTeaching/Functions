@@ -22,7 +22,7 @@ The content for this short topic includes the following:
 
  - Here are the [slides](https://dyerlabteaching.github.io/Functions/slides.html) discussing this topic.  
  - A larger [narrative](https://dyerlabteaching.github.io/Functions/narrative.html) goes into more depth on function creation.  
- - Here is an [in class](https://dyerlabteaching.github.io/Functions/in-class.html) activity.  
+ - Here is an in-class activity for [data literacy](https://dyerlabteaching.github.io/Functions/in-class_data_literacy.html), and one for [population genetics](https://dyerlabteaching.github.io/Functions/in-class_popgen.html).
 
 
 ## Contact Information
