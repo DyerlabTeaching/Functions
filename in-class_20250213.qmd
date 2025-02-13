@@ -3,12 +3,32 @@ title: "Functions"
 author: "Dr. D"
 ---
 
+So here is the binomial function.
 
 $$
-P(N_A|N,N_A,p) = \frac{2N!}{N_A!(N-N_A)!}p^{N_A} (1-p)^{N-N_A}
+P(N_A|N,N_A,p) = \frac{2N!}{N_A!(2N-N_A)!}p^{N_A} (1-p)^{2N-N_A}
 $$
-If you are estimating $P(N_A|N,N_A,p)$ then 
+If you are estimating $P(N_A|N,N_A,p)$ then we need to make code that will be put into a function.  I start by specifying some of the parameters that are going to go into this function.
 
+```{r}
+N <- 30
+Na <- 14
+p <- 0.6
+```
+
+And then make the code that does the calculation for these parameters.
+
+```{r}
+num <- factorial( 2*N )
+denom <- factorial( Na) * factorial(2*N - Na)
+prob <- p^Na * (1-p)^(2*N-Na)  
+res <- num/denom *prob
+res
+```
+
+**Always** check your answer.  Is it giving me something that is *vaguely* correct? This should produce a probability, is the answer a probability? 
+
+Then, warp the code into a function:
 
 ```{r}
 binomial_prob <- function( N, Na, p ) { 
@@ -20,68 +40,60 @@ binomial_prob <- function( N, Na, p ) {
 }
 ```
 
-
-
-
+Now test it with some other values.
 
 ```{r}
-N <- 20
-Na <- 20
-p  <- 0.5 
-
-binomial_prob(N,Na,p)
-
+binomial_prob(20,20,0.5)
 ```
 
 
+## Making a scenario
+
+So let's estimate a situation where we look at the probability of values of $Na$ that are reasonable.  In a diploid organism, we can have 0, 1, 2, ... , 2*N copies of the $A$ allele.  So, let's make a data.frame object that has a column for the numbrer of $Na$ alleles at the next generation.
 
 ```{r}
-N <- 20 
-data.frame( Na = 0:(2*N),
-            p = NA ) -> df 
-df
-
-```
-
-
-```{r}
-p <- 0.5
 N <- 40 
-Na <- 0 
+data.frame( Na = 0:(2*N) ) -> df 
 
-
-df$p[1] <- binomial_prob(N,0,p)
-df$p[2] <- binomial_prob(N,1,p)
-
-head( df )
-
-
-binomial_prob(10,4,0.5)
-
+# look at it.
+summary( df )
 ```
 
+Let's also now add a column for the probabilities associated with each of these $Na$ values.  I like to fill it with missing data, $NA$, so if I mess something up, it does not have values that I may mistake for data in it.
+
+```{r}
+df$p <- NA
+
+# look at it.
+summary( df )
+```
+
+Now, let's use the `rowwise()` function from `tidyverse` to go through this data.frame and estimate the probabilities for each of these.
 
 ```{r}
 library( tidyverse )
-
-
-data.frame( N = 40,
-            Na = 0:(2*N),
-            p = NA ) |>  
+df |>
   rowwise() |>
-  mutate( p = binomial_prob(40, Na, 0.5) ) -> df
-
-
-
+  mutate( p = binomial_prob( 40, Na, 0.5 ) ) 
 ```
 
+
+It looks like it gave me something that is reasonable...
+
+So now, lets take that and pipe it into `ggplot` to make a graph.
 
 ```{r}
-df |> 
-  ggplot( aes(Na,p) ) + 
-  geom_col()
-
+df |>
+  rowwise() |>
+  mutate( p = binomial_prob( 40, Na, 0.5 ) ) |>
+  ggplot( aes( Na, p ) ) +
+  geom_col() 
 ```
+
+
+
+Perfect.
+
 
 
 
