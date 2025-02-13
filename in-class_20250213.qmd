@@ -1,0 +1,92 @@
+---
+title: "Functions"
+author: "Dr. D"
+---
+
+
+$$
+P(N_A|N,N_A,p) = \frac{2N!}{N_A!(N-N_A)!}p^{N_A} (1-p)^{N-N_A}
+$$
+If you are estimating $P(N_A|N,N_A,p)$ then 
+
+
+```{r}
+binomial_prob <- function( N, Na, p ) { 
+  num <- factorial( 2*N )
+  denom <- factorial( Na) * factorial(2*N - Na)
+  prob <- p^Na * (1-p)^(2*N-Na)  
+  res <- num/denom *prob
+  return( res )
+}
+```
+
+
+
+
+
+```{r}
+N <- 20
+Na <- 20
+p  <- 0.5 
+
+binomial_prob(N,Na,p)
+
+```
+
+
+
+```{r}
+N <- 20 
+data.frame( Na = 0:(2*N),
+            p = NA ) -> df 
+df
+
+```
+
+
+```{r}
+p <- 0.5
+N <- 40 
+Na <- 0 
+
+
+df$p[1] <- binomial_prob(N,0,p)
+df$p[2] <- binomial_prob(N,1,p)
+
+head( df )
+
+
+binomial_prob(10,4,0.5)
+
+```
+
+
+```{r}
+library( tidyverse )
+
+
+data.frame( N = 40,
+            Na = 0:(2*N),
+            p = NA ) |>  
+  rowwise() |>
+  mutate( p = binomial_prob(40, Na, 0.5) ) -> df
+
+
+
+```
+
+
+```{r}
+df |> 
+  ggplot( aes(Na,p) ) + 
+  geom_col()
+
+```
+
+
+
+
+
+
+
+
